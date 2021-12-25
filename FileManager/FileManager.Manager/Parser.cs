@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GeekBrains.Learn.FileManager.Shared;
 
-namespace GeekBrains.Learn.FileManager
+namespace GeekBrains.Learn.FileManager.Manager
 {
+    /// <summary>
+    /// Parse commands
+    /// </summary>
     public class Parser
     {
         /// <summary>
@@ -49,7 +53,13 @@ namespace GeekBrains.Learn.FileManager
 
             if (isStartParam)
             {
-                throw new Exception("Ошибка в команде. Незакрытые кавычки");
+                new LogManager().Log(LogManager.ArraytoString(new string[]
+                {
+                    ErrorMessages.ErrorsRus()["Error"],
+                    ErrorMessages.ErrorsRus()["The command has unclosed quotes"]
+                }));
+
+                return Array.Empty<string>();
             }
 
             AddParam(sb, list, true, ref paramsCount);

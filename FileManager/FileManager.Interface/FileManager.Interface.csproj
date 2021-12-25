@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>GeekBrains.Learn.FileManager</RootNamespace>
+    <RootNamespace>GeekBrains.Learn.FileManager.Interface</RootNamespace>
 	<CodeAnalysisRuleSet>..\StyleCopAnalyzersDefault.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
@@ -15,13 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileManager.Interface\FileManager.Interface.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="readme.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\FileManager.Manager\FileManager.Manager.csproj" />
+    <ProjectReference Include="..\FileManager.Shared\FileManager.Shared.csproj" />
+    <ProjectReference Include="..\LoggerLib\LoggerLib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,19 @@
-﻿namespace GeekBrains.Learn.FileManager
+﻿using GeekBrains.Learn.FileManager.Interface;
+
+namespace GeekBrains.Learn.FileManager.Main
 {
-    class Program
-    {
-        static void Main(string[] args)
+    /// <summary>
+    /// Start class
+    /// </summary>
+    public class Program
+{
+        /// <summary>
+        /// Точка входа в программу
+        /// </summary>
+        public static void Main()
         {
-            Manager manager = new();
-            manager.Start();
+            IUserInterface userInterface = new UserInterface();
+            userInterface.Start();
         }
     }
 }
